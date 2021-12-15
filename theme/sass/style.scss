@@ -11,19 +11,39 @@ body {
 
 h1 {
     color: var(--dark-blue);
+    margin-top: 0;
 }
 
 main {
-    max-width: 400px;
     padding: 20px;
     background-color: var(--white);
     border-radius: 8px;
+    max-width: 330px;
+    // max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    & .restart,
+    .newGame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 24px;
+    }
+    & .restart {
+        background-color: var(--dark-grey);
+    }
+    & .newGame {
+        background-color: var(--orange);
+    }
 }
 
 .pairContainer {
@@ -31,10 +51,60 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    & .infoGame {
+        margin-top: 16px;
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        & h3 {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: var(--grey);
+            border-radius: 4px;
+            padding: 8px 12px;
+            & span {
+                margin-left: auto;
+                font-size: 16px;
+                font-weight: 800;
+            }
+        }
+    }
     & .pairIcon {
+        position: relative;
         height: 70px;
         width: 70px;
         border-radius: 1000px;
+        &_Front {
+            top: 0;
+            position: absolute;
+            background-color: var(--dark-grey);
+            height: 100%;
+            width: 100%;
+            border-radius: inherit;
+            transform: rotateY(0deg);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            &:hover {
+                transform: rotateY(360deg);
+                // background-color: var(--orange);
+            }
+        }
+        &_Back {
+            top: 0;
+            position: absolute;
+            background-color: var(--grey);
+            height: 100%;
+            width: 100%;
+            border-radius: inherit;
+        }
+        // &:nth-child(2n) {
+        // background-color: var(--orange);
+        // color: lime;
+        // }
     }
 }
 
