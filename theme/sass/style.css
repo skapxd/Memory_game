@@ -6,6 +6,10 @@
   --orange: #fda215;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,6 +49,7 @@ main {
 }
 
 .menu {
+  margin-top: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,6 +59,7 @@ main {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 8px;
 }
 
 .menu .restart,
@@ -69,13 +75,16 @@ main {
           align-items: center;
   padding: 8px 12px;
   border-radius: 24px;
+  font-weight: 700;
 }
 
 .menu .restart {
-  background-color: var(--dark-grey);
+  color: var(--dark-grey);
+  background-color: var(--grey);
 }
 
 .menu .newGame {
+  color: #fff;
   background-color: var(--orange);
 }
 
